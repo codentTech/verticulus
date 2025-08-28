@@ -1,30 +1,44 @@
-'use client'
+"use client";
 
-import Link from 'next/link'
-import { useState } from 'react'
-import { Mail, Send, Linkedin, Twitter, Github, Phone, MapPin } from 'lucide-react'
+import { useState } from "react";
+import Link from "next/link";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Linkedin,
+  Twitter,
+  Github,
+  Send,
+} from "lucide-react";
 
 export default function Footer() {
-  const [email, setEmail] = useState('')
-  const [isSubscribed, setIsSubscribed] = useState(false)
+  const [email, setEmail] = useState("");
+  const [isSubscribed, setIsSubscribed] = useState(false);
 
-  const handleSubscribe = (e: React.FormEvent) => {
-    e.preventDefault()
+  const handleSubscribe = (e) => {
+    e.preventDefault();
     if (email) {
-      setIsSubscribed(true)
-      setEmail('')
+      setIsSubscribed(true);
+      setEmail("");
       // Reset after 3 seconds
-      setTimeout(() => setIsSubscribed(false), 3000)
+      setTimeout(() => setIsSubscribed(false), 3000);
     }
-  }
+  };
 
   return (
     <footer className="bg-theme-black text-theme-white relative overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-20 right-20 w-32 h-32 bg-accent-500/20 rounded-full animate-pulse"></div>
-        <div className="absolute bottom-20 left-20 w-24 h-24 bg-accent-400/20 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
-        <div className="absolute top-1/2 left-1/3 w-16 h-16 bg-accent-300/15 rounded-full animate-pulse" style={{animationDelay: '2s'}}></div>
+        <div
+          className="absolute bottom-20 left-20 w-24 h-24 bg-accent-400/20 rounded-full animate-pulse"
+          style={{ animationDelay: "1s" }}
+        ></div>
+        <div
+          className="absolute top-1/2 left-1/3 w-16 h-16 bg-accent-300/15 rounded-full animate-pulse"
+          style={{ animationDelay: "2s" }}
+        ></div>
       </div>
 
       <div className="container mx-auto px-6 py-8 relative z-10">
@@ -36,17 +50,26 @@ export default function Footer() {
               Verticulus
             </h3>
             <p className="text-theme-gray-300 text-sm leading-relaxed mb-3 max-w-sm">
-              Professional software development company delivering innovative solutions 
-              for businesses worldwide.
+              Professional software development company delivering innovative
+              solutions for businesses worldwide.
             </p>
             <div className="flex space-x-3">
-              <a href="#" className="w-8 h-8 bg-theme-gray-800 rounded-lg flex items-center justify-center text-theme-gray-400">
+              <a
+                href="#"
+                className="w-8 h-8 bg-theme-gray-800 rounded-lg flex items-center justify-center text-theme-gray-400"
+              >
                 <Linkedin className="w-4 h-4" />
               </a>
-              <a href="#" className="w-8 h-8 bg-theme-gray-800 rounded-lg flex items-center justify-center text-theme-gray-400">
+              <a
+                href="#"
+                className="w-8 h-8 bg-theme-gray-800 rounded-lg flex items-center justify-center text-theme-gray-400"
+              >
                 <Twitter className="w-4 h-4" />
               </a>
-              <a href="#" className="w-8 h-8 bg-theme-gray-800 rounded-lg flex items-center justify-center text-theme-gray-400">
+              <a
+                href="#"
+                className="w-8 h-8 bg-theme-gray-800 rounded-lg flex items-center justify-center text-theme-gray-400"
+              >
                 <Github className="w-4 h-4" />
               </a>
             </div>
@@ -58,10 +81,17 @@ export default function Footer() {
               Services
             </h4>
             <ul className="space-y-1.5">
-              {['Web Development', 'Mobile Development', 'UI/UX Design', 'Consulting', 'Cloud Solutions', 'DevOps'].map((service, index) => (
+              {[
+                "Web Development",
+                "Mobile Development",
+                "UI/UX Design",
+                "Consulting",
+                "Cloud Solutions",
+                "DevOps",
+              ].map((service, index) => (
                 <li key={index}>
-                  <Link 
-                    href="/services" 
+                  <Link
+                    href="/services"
                     className="text-theme-gray-300 text-sm"
                   >
                     {service}
@@ -77,12 +107,16 @@ export default function Footer() {
               Company
             </h4>
             <ul className="space-y-1.5">
-              {['About Us', 'Our Team', 'Careers', 'Blog', 'Press', 'Partners'].map((item, index) => (
+              {[
+                "About Us",
+                "Our Team",
+                "Careers",
+                "Blog",
+                "Press",
+                "Partners",
+              ].map((item, index) => (
                 <li key={index}>
-                  <Link 
-                    href="/about" 
-                    className="text-theme-gray-300 text-sm"
-                  >
+                  <Link href="/about" className="text-theme-gray-300 text-sm">
                     {item}
                   </Link>
                 </li>
@@ -116,7 +150,9 @@ export default function Footer() {
 
             {/* Subscribe Section - Right Side */}
             <div className="border-t border-theme-gray-700 pt-3">
-              <h5 className="text-sm font-medium text-theme-white mb-2">Subscribe</h5>
+              <h5 className="text-sm font-medium text-theme-white mb-2">
+                Subscribe
+              </h5>
               <form onSubmit={handleSubscribe} className="space-y-2">
                 <div className="relative">
                   <Mail className="absolute left-2 top-1/2 -translate-y-1/2 w-3 h-3 text-theme-gray-400" />
@@ -155,5 +191,5 @@ export default function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }

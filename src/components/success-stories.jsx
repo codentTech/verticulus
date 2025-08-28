@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 export default function SuccessStories({ caseStudies }) {
   return (
@@ -20,8 +21,14 @@ export default function SuccessStories({ caseStudies }) {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {caseStudies.map((study, index) => (
             <div key={index} className="bg-gray-50 rounded-lg p-8">
-              <div className="aspect-video bg-gray-300 rounded-lg mb-6 flex items-center justify-center">
-                <span className="text-gray-500">Case Study Image</span>
+              <div className="aspect-video bg-gray-300 rounded-lg mb-6 flex items-center justify-center overflow-hidden">
+                <Image
+                  src={study.image}
+                  alt={study.title}
+                  width={600}
+                  height={400}
+                  className="w-full h-full object-cover"
+                />
               </div>
               <h3 className="text-xl font-semibold text-theme-dark mb-4">
                 {study.title}

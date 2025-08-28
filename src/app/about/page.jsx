@@ -1,4 +1,6 @@
 import { Award, Heart, Target, Users } from 'lucide-react'
+import { IMAGES } from '../../common/constants/images.constant'
+import Image from 'next/image'
 
 export default function About() {
   const values = [
@@ -28,22 +30,22 @@ export default function About() {
     {
       name: 'John Doe',
       role: 'CEO & Founder',
-      image: '/placeholder',
+      image: IMAGES.TEAM_MEMBER_1,
     },
     {
       name: 'Jane Smith',
       role: 'Lead Developer',
-      image: '/placeholder',
+      image: IMAGES.TEAM_MEMBER_2,
     },
     {
       name: 'Mike Johnson',
       role: 'UI/UX Designer',
-      image: '/placeholder',
+      image: IMAGES.TEAM_MEMBER_3,
     },
     {
       name: 'Sarah Wilson',
       role: 'Project Manager',
-      image: '/placeholder',
+      image: IMAGES.TEAM_MEMBER_4,
     },
   ]
 
@@ -75,8 +77,14 @@ export default function About() {
                 Today, we work with clients across various industries, from startups to enterprise companies, helping them build innovative solutions that drive growth and success.
               </p>
             </div>
-            <div className="bg-theme-gray-200 rounded-lg aspect-square flex items-center justify-center">
-              <span className="text-theme-gray-500">Company Story Image Placeholder</span>
+            <div className="rounded-lg aspect-square overflow-hidden">
+              <Image
+                src={IMAGES.COMPANY_STORY}
+                alt="Company Story"
+                width={600}
+                height={600}
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
         </div>
@@ -98,13 +106,15 @@ export default function About() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => (
               <div key={index} className="card p-8 text-center">
-                <div className="icon-container mb-6">
-                  <div className="text-theme-black">
-                    <value.icon className="h-8 w-8" />
-                  </div>
+                <div className="icon-container-accent mb-6">
+                  <value.icon className="h-6 w-6 text-accent-600" />
                 </div>
-                <h3 className="text-xl font-semibold text-theme-black mb-4">{value.title}</h3>
-                <p className="text-theme-gray-600">{value.description}</p>
+                <h3 className="text-xl font-semibold text-theme-black mb-3">
+                  {value.title}
+                </h3>
+                <p className="text-theme-gray-600">
+                  {value.description}
+                </p>
               </div>
             ))}
           </div>
@@ -115,19 +125,29 @@ export default function About() {
       <section className="py-20">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-theme-black mb-6">Our Team</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-theme-black mb-4">
+              Meet Our Team
+            </h2>
             <p className="text-xl text-theme-gray-600 max-w-2xl mx-auto">
-              The talented individuals who make Verticulus what it is today.
+              The talented individuals behind our success
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {team.map((member, index) => (
               <div key={index} className="card p-6 text-center">
-                <div className="w-32 h-32 bg-theme-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <span className="text-theme-gray-500 text-sm">Photo</span>
+                <div className="w-32 h-32 rounded-full overflow-hidden mx-auto mb-4">
+                  <Image
+                    src={member.image}
+                    alt={member.name}
+                    width={128}
+                    height={128}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-                <h3 className="text-xl font-semibold text-theme-black mb-2">{member.name}</h3>
+                <h3 className="text-xl font-semibold text-theme-black mb-2">
+                  {member.name}
+                </h3>
                 <p className="text-theme-gray-700">{member.role}</p>
               </div>
             ))}
@@ -140,25 +160,24 @@ export default function About() {
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-4xl md:text-5xl font-bold text-theme-white mb-2">5+</div>
-              <div className="text-theme-gray-300">Years Experience</div>
-            </div>
-            <div>
-              <div className="text-4xl md:text-5xl font-bold text-theme-white mb-2">100+</div>
-              <div className="text-theme-gray-300">Projects Completed</div>
+              <div className="text-4xl md:text-5xl font-bold text-theme-white mb-2">70+</div>
+              <div className="text-accent-100">Projects Completed</div>
             </div>
             <div>
               <div className="text-4xl md:text-5xl font-bold text-theme-white mb-2">50+</div>
-              <div className="text-theme-gray-300">Happy Clients</div>
+              <div className="text-accent-100">Happy Clients</div>
             </div>
             <div>
-              <div className="text-4xl md:text-5xl font-bold text-theme-white mb-2">15+</div>
-              <div className="text-theme-gray-300">Team Members</div>
+              <div className="text-4xl md:text-5xl font-bold text-theme-white mb-2">5+</div>
+              <div className="text-accent-100">Years Experience</div>
+            </div>
+            <div>
+              <div className="text-4xl md:text-5xl font-bold text-theme-white mb-2">24/7</div>
+              <div className="text-accent-100">Support Available</div>
             </div>
           </div>
         </div>
       </section>
-
     </div>
   )
 }

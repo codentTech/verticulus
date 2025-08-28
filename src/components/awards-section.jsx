@@ -1,30 +1,16 @@
-import React from 'react'
-import { Users, Clock, Zap } from 'lucide-react'
+import React from "react";
+import { Users, Clock, Zap } from "lucide-react";
 
-interface Award {
-  name: string
-  icon: string
-}
-
-interface Stat {
-  number: string
-  label: string
-  icon: any
-}
-
-interface AwardsSectionProps {
-  awards: Award[]
-  stats: Stat[]
-}
-
-export default function AwardsSection({ awards, stats }: AwardsSectionProps) {
+export default function AwardsSection({ awards, stats }) {
   return (
     <section className="bg-black py-16">
       <div className="container mx-auto px-6">
         <div className="text-center mb-10">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-gray-700 rounded-full mb-4">
             <div className="w-2 h-2 bg-gray-300 rounded-full"></div>
-            <span className="text-sm font-medium text-gray-200">Achievements</span>
+            <span className="text-sm font-medium text-gray-200">
+              Achievements
+            </span>
           </div>
           <h2 className="text-2xl md:text-3xl font-bold text-theme-light mb-3">
             Awards & Certifications
@@ -33,7 +19,7 @@ export default function AwardsSection({ awards, stats }: AwardsSectionProps) {
             Recognition of our expertise and commitment to excellence
           </p>
         </div>
-        
+
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4 mb-12">
           {awards.map((award, index) => (
             <div key={index} className="bg-gray-800 rounded-lg p-4 text-center">
@@ -46,12 +32,14 @@ export default function AwardsSection({ awards, stats }: AwardsSectionProps) {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {stats?.map((stat, index) => (
             <div key={index} className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-theme-light mb-2">{stat.number}</div>
+              <div className="text-4xl md:text-5xl font-bold text-theme-light mb-2">
+                {stat.number}
+              </div>
               <div className="text-gray-300">{stat.label}</div>
             </div>
           ))}
         </div>
       </div>
     </section>
-  )
+  );
 }
