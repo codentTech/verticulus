@@ -2,19 +2,29 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [logoHover, setLogoHover] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
 
   const navigation = [
     { name: "Home", href: "/" },
     { name: "About", href: "/about" },
-    { name: "Services", href: "/services" },
+    { name: "Services", href: "/services", hasDropdown: true },
     { name: "Portfolio", href: "/portfolio" },
     { name: "Blog", href: "/blog" },
     { name: "Contact", href: "/contact" },
+  ];
+
+  const servicesDropdown = [
+    { name: "AI & Machine Learning", href: "/services/1" },
+    { name: "Custom Development", href: "/services/2" },
+    { name: "Web Development", href: "/services/3" },
+    { name: "Mobile Development", href: "/services/4" },
+    { name: "UI/UX Design", href: "/services/5" },
+    { name: "Cloud Solutions", href: "/services/6" },
   ];
 
   return (
@@ -102,14 +112,69 @@ export default function Header() {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex space-x-12">
             {navigation.map((item) => (
-              <Link
+              <div
                 key={item.name}
-                href={item.href}
-                className="text-gray-300 hover:text-white transition-colors duration-200 font-medium text-sm uppercase tracking-wide relative group"
+                className="relative group"
+                onMouseEnter={() => item.hasDropdown && setIsServicesOpen(true)}
+                onMouseLeave={() => item.hasDropdown && setIsServicesOpen(false)}
+              >
+                {item.hasDropdown ? (
+                  <>
+                    <Link
+                      href={item.href}
+                      className="text-gray-300 hover:text-white transition-colors duration-200 font-medium text-sm uppercase tracking-wide relative flex items-center"
+                    >
+                      <span className="relative z-10">{item.name}</span>
+                      <ChevronDown
+                        className={`w-4 h-4 ml-1 transition-transform duration-200 ${
+                          isServicesOpen ? "rotate-180" : ""
+                        }`}
+                      />
+                      <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-600 group-hover:w-full transition-all duration-300"></div>
+                    </Link>
+                    {/* Dropdown Menu */}
+                    {isServicesOpen && (
+                      <div 
+                        className="absolute top-full left-0 pt-2 w-64 z-50"
+                        onMouseEnter={() => setIsServicesOpen(true)}
+                        onMouseLeave={() => setIsServicesOpen(false)}
+                      >
+                        {/* Invisible bridge to prevent gap */}
+                        <div className="h-2 w-full"></div>
+                        <div className="bg-black border border-gray-700 rounded-lg shadow-xl py-2">
+                          {servicesDropdown.map((service) => (
+                            <Link
+                              key={service.name}
+                              href={service.href}
+                              className="block px-4 py-3 text-gray-300 hover:text-white hover:bg-gray-800 transition-colors duration-200 text-sm"
+                              onClick={() => setIsServicesOpen(false)}
+                            >
+                              {service.name}
+                            </Link>
+                          ))}
+                          <div className="border-t border-gray-700 mt-2 pt-2">
+                            <Link
+                              href="/services"
+                              className="block px-4 py-3 text-blue-400 hover:text-blue-300 hover:bg-gray-800 transition-colors duration-200 text-sm font-medium"
+                              onClick={() => setIsServicesOpen(false)}
+                            >
+                              View All Services →
+                            </Link>
+                          </div>
+                        </div>
+                      </div>
+                    )}
+                  </>
+                ) : (
+                  <Link
+                    href={item.href}
+                    className="text-gray-300 hover:text-white transition-colors duration-200 font-medium text-sm uppercase tracking-wide relative"
               >
                 <span className="relative z-10">{item.name}</span>
                 <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-600 group-hover:w-full transition-all duration-300"></div>
               </Link>
+                )}
+              </div>
             ))}
           </nav>
 
@@ -142,14 +207,60 @@ export default function Header() {
           <div className="lg:hidden py-6 border-t border-gray-700">
             <nav className="flex flex-col space-y-4">
               {navigation.map((item) => (
+                <div key={item.name}>
+                  {item.hasDropdown ? (
+                    <div>
+                      <button
+                        onClick={() =>
+                          setIsServicesOpen(!isServicesOpen)
+                        }
+                        className="text-gray-300 hover:text-white transition-colors duration-200 font-medium text-sm uppercase tracking-wide flex items-center justify-between w-full"
+                      >
+                        {item.name}
+                        <ChevronDown
+                          className={`w-4 h-4 transition-transform duration-200 ${
+                            isServicesOpen ? "rotate-180" : ""
+                          }`}
+                        />
+                      </button>
+                      {isServicesOpen && (
+                        <div className="ml-4 mt-2 space-y-2 border-l border-gray-700 pl-4">
+                          {servicesDropdown.map((service) => (
+                            <Link
+                              key={service.name}
+                              href={service.href}
+                              className="block text-gray-400 hover:text-white transition-colors duration-200 text-sm"
+                              onClick={() => {
+                                setIsMenuOpen(false);
+                                setIsServicesOpen(false);
+                              }}
+                            >
+                              {service.name}
+                            </Link>
+                          ))}
+                          <Link
+                            href="/services"
+                            className="block text-blue-400 hover:text-blue-300 transition-colors duration-200 text-sm font-medium"
+                            onClick={() => {
+                              setIsMenuOpen(false);
+                              setIsServicesOpen(false);
+                            }}
+                          >
+                            View All Services →
+                          </Link>
+                        </div>
+                      )}
+                    </div>
+                  ) : (
                 <Link
-                  key={item.name}
                   href={item.href}
                   className="text-gray-300 hover:text-white transition-colors duration-200 font-medium text-sm uppercase tracking-wide"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
                 </Link>
+                  )}
+                </div>
               ))}
               <div className="pt-4">
                 <Link
