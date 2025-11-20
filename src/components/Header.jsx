@@ -19,12 +19,12 @@ export default function Header() {
   ];
 
   const servicesDropdown = [
-    { name: "AI & Machine Learning", href: "/services/1" },
-    { name: "Custom Development", href: "/services/2" },
-    { name: "Web Development", href: "/services/3" },
-    { name: "Mobile Development", href: "/services/4" },
-    { name: "UI/UX Design", href: "/services/5" },
-    { name: "Cloud Solutions", href: "/services/6" },
+    { name: "AI & Machine Learning", href: "/services/ai-ml" },
+    { name: "Custom Development", href: "/services/custom-development" },
+    { name: "Web Development", href: "/services/web-development" },
+    { name: "Mobile Development", href: "/services/mobile-development" },
+    { name: "UI/UX Design", href: "/services/ui-ux-design" },
+    { name: "Cloud Solutions", href: "/services/cloud-solutions" },
   ];
 
   return (
@@ -116,7 +116,9 @@ export default function Header() {
                 key={item.name}
                 className="relative group"
                 onMouseEnter={() => item.hasDropdown && setIsServicesOpen(true)}
-                onMouseLeave={() => item.hasDropdown && setIsServicesOpen(false)}
+                onMouseLeave={() =>
+                  item.hasDropdown && setIsServicesOpen(false)
+                }
               >
                 {item.hasDropdown ? (
                   <>
@@ -134,7 +136,7 @@ export default function Header() {
                     </Link>
                     {/* Dropdown Menu */}
                     {isServicesOpen && (
-                      <div 
+                      <div
                         className="absolute top-full left-0 pt-2 w-64 z-50"
                         onMouseEnter={() => setIsServicesOpen(true)}
                         onMouseLeave={() => setIsServicesOpen(false)}
@@ -169,10 +171,10 @@ export default function Header() {
                   <Link
                     href={item.href}
                     className="text-gray-300 hover:text-white transition-colors duration-200 font-medium text-sm uppercase tracking-wide relative"
-              >
-                <span className="relative z-10">{item.name}</span>
-                <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-600 group-hover:w-full transition-all duration-300"></div>
-              </Link>
+                  >
+                    <span className="relative z-10">{item.name}</span>
+                    <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-600 group-hover:w-full transition-all duration-300"></div>
+                  </Link>
                 )}
               </div>
             ))}
@@ -211,9 +213,7 @@ export default function Header() {
                   {item.hasDropdown ? (
                     <div>
                       <button
-                        onClick={() =>
-                          setIsServicesOpen(!isServicesOpen)
-                        }
+                        onClick={() => setIsServicesOpen(!isServicesOpen)}
                         className="text-gray-300 hover:text-white transition-colors duration-200 font-medium text-sm uppercase tracking-wide flex items-center justify-between w-full"
                       >
                         {item.name}
@@ -252,13 +252,13 @@ export default function Header() {
                       )}
                     </div>
                   ) : (
-                <Link
-                  href={item.href}
-                  className="text-gray-300 hover:text-white transition-colors duration-200 font-medium text-sm uppercase tracking-wide"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.name}
-                </Link>
+                    <Link
+                      href={item.href}
+                      className="text-gray-300 hover:text-white transition-colors duration-200 font-medium text-sm uppercase tracking-wide"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      {item.name}
+                    </Link>
                   )}
                 </div>
               ))}

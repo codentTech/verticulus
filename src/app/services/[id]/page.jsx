@@ -26,6 +26,7 @@ export default function ServiceDetail({ params }) {
   const services = [
     {
       id: "1",
+      slug: "ai-ml",
       title: "AI & ML",
       description:
         "Intelligent solutions powered by artificial intelligence and machine learning.",
@@ -130,6 +131,7 @@ export default function ServiceDetail({ params }) {
     },
     {
       id: "2",
+      slug: "custom-development",
       title: "Custom Development",
       description:
         "Tailored software solutions built specifically for your business needs.",
@@ -235,6 +237,7 @@ export default function ServiceDetail({ params }) {
     },
     {
       id: "3",
+      slug: "web-development",
       title: "Web Development",
       description: "Custom web applications built with modern technologies.",
       longDescription:
@@ -338,6 +341,7 @@ export default function ServiceDetail({ params }) {
     },
     {
       id: "4",
+      slug: "mobile-development",
       title: "Mobile Development",
       description: "Native and cross-platform mobile applications.",
       longDescription:
@@ -440,6 +444,7 @@ export default function ServiceDetail({ params }) {
     },
     {
       id: "5",
+      slug: "ui-ux-design",
       title: "UI/UX Design",
       description: "Beautiful and intuitive user interfaces.",
       longDescription:
@@ -542,6 +547,7 @@ export default function ServiceDetail({ params }) {
     },
     {
       id: "6",
+      slug: "cloud-solutions",
       title: "Cloud Solutions",
       description: "Scalable cloud infrastructure and deployment solutions.",
       longDescription:
@@ -642,9 +648,218 @@ export default function ServiceDetail({ params }) {
         },
       ],
     },
+    {
+      id: "7",
+      slug: "database-design",
+      title: "Database Design",
+      description: "Robust database architecture and management solutions.",
+      longDescription:
+        "We design secure, high-performance databases that power mission-critical applications. From data modeling to performance optimization, our team ensures your data layer is reliable, scalable, and future-proof.",
+      features: [
+        "Database Architecture",
+        "Data Modeling",
+        "Performance Optimization",
+        "Data Migration",
+        "Backup & Recovery",
+        "Security Implementation",
+      ],
+      benefits: [
+        "High availability and reliability",
+        "Optimized query performance",
+        "Secure data storage",
+        "Streamlined migrations",
+        "Compliance-ready infrastructure",
+      ],
+      process: [
+        "Requirements & Audit",
+        "Schema & Modeling",
+        "Implementation",
+        "Performance Tuning",
+        "Training & Handover",
+      ],
+      technologies: [
+        "PostgreSQL",
+        "MySQL",
+        "MongoDB",
+        "Redis",
+        "AWS RDS",
+        "Azure SQL",
+      ],
+      duration: "4-6 weeks",
+      team: "2-3 engineers",
+      price: "Starting from $12,000",
+      image: IMAGES.DATABASE_VISUAL,
+      category: "Database Design",
+      stats: {
+        projects: "40+",
+        clients: "25+",
+        satisfaction: "98%",
+        successRate: "97%",
+      },
+      testimonials: [
+        {
+          text: "Verticulus re-architected our databases and reduced query times by over 60%. The migration was seamless and the documentation was excellent.",
+          author: "Laura Green",
+          title: "Director of Engineering",
+          company: "DataFlow Systems",
+          avatar: IMAGES.TESTIMONIAL_1,
+          rating: 5,
+        },
+        {
+          text: "The team helped us consolidate multiple data sources into a single, reliable platform. Reporting is faster and maintenance is drastically easier.",
+          author: "Ethan Brooks",
+          title: "CTO",
+          company: "Insight Analytics",
+          avatar: IMAGES.TESTIMONIAL_2,
+          rating: 5,
+        },
+      ],
+      faqs: [
+        {
+          question: "Which databases do you specialize in?",
+          answer:
+            "We support relational and NoSQL databases including PostgreSQL, MySQL, SQL Server, MongoDB, Redis, and managed services like AWS RDS and Azure SQL.",
+        },
+        {
+          question: "Do you handle zero-downtime migrations?",
+          answer:
+            "Yes. We plan phased migrations with replication, cutover rehearsals, and roll-back procedures to minimize or eliminate downtime.",
+        },
+        {
+          question: "Can you optimize our existing database?",
+          answer:
+            "Absolutely. We conduct performance audits, analyze slow queries, improve indexing strategies, and implement caching or sharding where needed.",
+        },
+        {
+          question: "Do you provide documentation and training?",
+          answer:
+            "Every engagement includes comprehensive documentation, runbooks, and handover workshops so your internal teams can operate the system confidently.",
+        },
+      ],
+      relatedBlogs: [
+        {
+          id: "4",
+          title: "Optimizing Database Performance: A Comprehensive Guide",
+          category: "Database",
+          image: IMAGES.BLOG_4,
+        },
+        {
+          id: "6",
+          title: "Security Best Practices for Web Applications",
+          category: "Security",
+          image: IMAGES.BLOG_6,
+        },
+      ],
+    },
+    {
+      id: "8",
+      slug: "security-services",
+      title: "Security Services",
+      description:
+        "Comprehensive security solutions to protect your applications.",
+      longDescription:
+        "Protect your applications and data with proactive security assessments, monitoring, and remediation plans. We combine automated tooling with experienced security engineers to mitigate risks before they impact your business.",
+      features: [
+        "Security Audits",
+        "Penetration Testing",
+        "SSL/TLS Implementation",
+        "Data Encryption",
+        "Security Monitoring",
+        "Compliance Consulting",
+      ],
+      benefits: [
+        "Early vulnerability detection",
+        "Stronger compliance posture",
+        "Reduced breach risk",
+        "Continuous monitoring",
+        "Actionable remediation plans",
+      ],
+      process: [
+        "Assessment & Planning",
+        "Threat Modeling",
+        "Testing & Validation",
+        "Remediation Support",
+        "Monitoring & Reporting",
+      ],
+      technologies: [
+        "OWASP ZAP",
+        "Burp Suite",
+        "Snyk",
+        "AWS Security Hub",
+        "Azure Defender",
+        "Splunk",
+      ],
+      duration: "3-6 weeks",
+      team: "2-4 security engineers",
+      price: "Starting from $14,000",
+      image: IMAGES.SECURITY_ICON,
+      category: "Security Services",
+      stats: {
+        projects: "55+",
+        clients: "30+",
+        satisfaction: "99%",
+        successRate: "98%",
+      },
+      testimonials: [
+        {
+          text: "Verticulus helped us pass a critical compliance audit on the first attempt. Their team uncovered issues our internal tools completely missed.",
+          author: "Priya Nair",
+          title: "CISO",
+          company: "Finlytics",
+          avatar: IMAGES.TESTIMONIAL_3,
+          rating: 5,
+        },
+        {
+          text: "Their penetration testing report was thorough, prioritized realistically, and included clear remediation guidance for our developers.",
+          author: "Mark Ellis",
+          title: "Head of Engineering",
+          company: "SecurePay",
+          avatar: IMAGES.TESTIMONIAL_1,
+          rating: 5,
+        },
+      ],
+      faqs: [
+        {
+          question: "Do you provide ongoing security monitoring?",
+          answer:
+            "Yes. We offer continuous monitoring, alert triage, and incident response retainers tailored to your infrastructure and compliance needs.",
+        },
+        {
+          question: "Can you help us achieve compliance certifications?",
+          answer:
+            "We advise on SOC 2, ISO 27001, HIPAA, GDPR, and PCI DSS readiness, including gap analysis, policy development, and audit preparation.",
+        },
+        {
+          question: "What types of penetration tests do you perform?",
+          answer:
+            "We run black-box, gray-box, and white-box penetration tests across web apps, APIs, cloud infrastructure, and mobile applications.",
+        },
+        {
+          question: "Do you offer secure SDLC consulting?",
+          answer:
+            "Absolutely. We can embed secure coding practices, threat modeling, and automated security scans into your development lifecycle.",
+        },
+      ],
+      relatedBlogs: [
+        {
+          id: "6",
+          title: "Security Best Practices for Web Applications",
+          category: "Security",
+          image: IMAGES.BLOG_6,
+        },
+        {
+          id: "2",
+          title: "Mobile App Development: Native vs Cross-Platform",
+          category: "Mobile Development",
+          image: IMAGES.BLOG_2,
+        },
+      ],
+    },
   ];
 
-  const service = services.find((s) => s.id === serviceId);
+  const service = services.find(
+    (s) => s.slug === serviceId || s.id === serviceId
+  );
 
   if (!service) {
     notFound();

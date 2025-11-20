@@ -1,3 +1,4 @@
+import Link from "next/link";
 import {
   Clock,
   Cloud,
@@ -15,6 +16,7 @@ import { IMAGES } from "../../common/constants/images.constant";
 export default function Services() {
   const services = [
     {
+      slug: "web-development",
       icon: Code,
       title: "Web Development",
       description:
@@ -31,6 +33,7 @@ export default function Services() {
       image: IMAGES.WEB_DEV_ICON,
     },
     {
+      slug: "mobile-development",
       icon: Smartphone,
       title: "Mobile Development",
       description:
@@ -47,6 +50,7 @@ export default function Services() {
       image: IMAGES.MOBILE_DEV_ICON,
     },
     {
+      slug: "ui-ux-design",
       icon: Palette,
       title: "UI/UX Design",
       description:
@@ -63,6 +67,7 @@ export default function Services() {
       image: IMAGES.UI_UX_ICON,
     },
     {
+      slug: "database-design",
       icon: Database,
       title: "Database Design",
       description: "Robust database architecture and management solutions.",
@@ -78,6 +83,7 @@ export default function Services() {
       image: IMAGES.DATABASE_VISUAL,
     },
     {
+      slug: "cloud-solutions",
       icon: Cloud,
       title: "Cloud Solutions",
       description: "Scalable cloud infrastructure and deployment solutions.",
@@ -93,6 +99,7 @@ export default function Services() {
       image: IMAGES.CLOUD_ICON,
     },
     {
+      slug: "security-services",
       icon: Shield,
       title: "Security Services",
       description:
@@ -189,14 +196,14 @@ export default function Services() {
                 key={index}
                 className="card p-6 sm:p-8 hover:shadow-lg transition-shadow"
               >
-                <div className="icon-container mb-4 sm:mb-6">
+                <div className="flex gap-2 items-start mb-4 sm:mb-6">
                   <div className="text-theme-black">
                     <service.icon className="h-6 w-6 sm:h-8 sm:w-8" />
                   </div>
+                  <h3 className="text-xl sm:text-2xl font-semibold text-theme-black mb-3 sm:mb-4">
+                    {service.title}
+                  </h3>
                 </div>
-                <h3 className="text-xl sm:text-2xl font-semibold text-theme-black mb-3 sm:mb-4">
-                  {service.title}
-                </h3>
                 <p className="text-sm sm:text-base text-theme-gray-600 mb-4 sm:mb-6">
                   {service.description}
                 </p>
@@ -211,6 +218,12 @@ export default function Services() {
                     </li>
                   ))}
                 </ul>
+                <Link
+                  href={`/services/${service.slug}`}
+                  className="btn-primary w-full text-center text-sm sm:text-base"
+                >
+                  View Service
+                </Link>
               </div>
             ))}
           </div>

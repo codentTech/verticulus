@@ -22,24 +22,28 @@ import {
 export default function HomePage() {
   const services = [
     {
+      slug: "web-development",
       icon: <Search className="w-6 h-6" />,
       title: "Web Development",
       description:
         "Custom web applications built with modern technologies including React, Vue.js, Angular, and Node.js. We create responsive, scalable solutions that deliver exceptional user experiences and drive business growth.",
     },
     {
+      slug: "mobile-development",
       icon: <Shield className="w-6 h-6" />,
       title: "Mobile Development",
       description:
         "Native and cross-platform mobile applications for iOS and Android platforms. We develop high-performance mobile apps using React Native, Flutter, Swift, and Kotlin for seamless user experiences.",
     },
     {
+      slug: "ui-ux-design",
       icon: <Users className="w-6 h-6" />,
       title: "UI/UX Design",
       description:
         "Beautiful and intuitive user interfaces that provide exceptional user experiences. Our design team creates wireframes, prototypes, and design systems using modern tools and best practices.",
     },
     {
+      slug: "cloud-solutions",
       icon: <Settings className="w-6 h-6" />,
       title: "Cloud Solutions",
       description:

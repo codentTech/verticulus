@@ -119,7 +119,7 @@ export default function ServicesSection({ services }) {
               </div>
               <div className="mt-4">
                 <Link
-                  href="/services/1"
+                  href="/services/ai-ml"
                   className="btn-primary w-full mt-4 text-center"
                 >
                   Learn More
@@ -146,7 +146,9 @@ export default function ServicesSection({ services }) {
                   </p>
                   <div className="mt-auto">
                     <Link
-                      href={`/services/${index + 2}`}
+                      href={
+                        service.slug ? `/services/${service.slug}` : "/services"
+                      }
                       className="btn-outline w-full text-center"
                     >
                       Learn More
@@ -275,7 +277,7 @@ export default function ServicesSection({ services }) {
               </div>
               <div className="mt-4">
                 <Link
-                  href="/services/2"
+                  href="/services/custom-development"
                   className="btn-primary w-full mt-4 text-center"
                 >
                   Learn More
