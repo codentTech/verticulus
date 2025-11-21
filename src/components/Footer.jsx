@@ -82,19 +82,19 @@ export default function Footer() {
             </h4>
             <ul className="space-y-1.5">
               {[
-                "Web Development",
-                "Mobile Development",
-                "UI/UX Design",
-                "Consulting",
-                "Cloud Solutions",
-                "DevOps",
+                { name: "Web Development", slug: "web-development" },
+                { name: "Mobile Development", slug: "mobile-development" },
+                { name: "UI/UX Design", slug: "ui-ux-design" },
+                { name: "AI & ML", slug: "ai-ml" },
+                { name: "Cloud Solutions", slug: "cloud-solutions" },
+                { name: "Custom Development", slug: "custom-development" },
               ].map((service, index) => (
                 <li key={index}>
                   <Link
-                    href="/services"
-                    className="text-theme-gray-300 text-sm"
+                    href={`/services/${service.slug}`}
+                    className="text-theme-gray-300 text-sm hover:text-accent-400 transition-colors duration-200"
                   >
-                    {service}
+                    {service.name}
                   </Link>
                 </li>
               ))}
@@ -108,16 +108,19 @@ export default function Footer() {
             </h4>
             <ul className="space-y-1.5">
               {[
-                "About Us",
-                "Our Team",
-                "Careers",
-                "Blog",
-                "Press",
-                "Partners",
+                { name: "About Us", href: "/about" },
+                { name: "Our Team", href: "/" },
+                { name: "Careers", href: "/" },
+                { name: "Blog", href: "/blog" },
+                { name: "Press", href: "/" },
+                { name: "Partners", href: "/" },
               ].map((item, index) => (
                 <li key={index}>
-                  <Link href="/about" className="text-theme-gray-300 text-sm">
-                    {item}
+                  <Link
+                    href={item.href}
+                    className="text-theme-gray-300 text-sm hover:text-accent-400 transition-colors duration-200"
+                  >
+                    {item.name}
                   </Link>
                 </li>
               ))}
