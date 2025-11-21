@@ -6,6 +6,7 @@ export default function BlogSection({ blogPosts }) {
   const posts = blogPosts || [
     {
       id: "1",
+      slug: "role-of-iot-integration-smart-enterprises",
       title: "The Role of IoT Integration in Smart Enterprises",
       category: "Technology",
       image:
@@ -13,6 +14,7 @@ export default function BlogSection({ blogPosts }) {
     },
     {
       id: "2",
+      slug: "leveraging-genai-business-innovation-real-world-applications",
       title:
         "Leveraging GenAI for Business Innovation: Real-World Applications",
       category: "Technology",
@@ -21,6 +23,7 @@ export default function BlogSection({ blogPosts }) {
     },
     {
       id: "3",
+      slug: "modernizing-legacy-systems-roadmap-seamless-transition",
       title: "Modernizing Legacy Systems: A Roadmap for Seamless Transition",
       category: "Technology",
       image:
@@ -49,7 +52,7 @@ export default function BlogSection({ blogPosts }) {
           {posts.map((post, index) => (
             <Link
               key={index}
-              href={`/blog/${post.id}`}
+              href={`/blog/${post.slug || post.id}`}
               className="card overflow-hidden hover:shadow-lg transition-shadow"
             >
               <div className="aspect-video overflow-hidden">

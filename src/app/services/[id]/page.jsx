@@ -115,14 +115,16 @@ export default function ServiceDetail({ params }) {
       ],
       relatedBlogs: [
         {
-          id: "1",
+          id: "2",
+          slug: "leveraging-genai-business-innovation-real-world-applications",
           title:
             "Leveraging GenAI for Business Innovation: Real-World Applications",
           category: "AI & ML",
           image: IMAGES.BLOG_2,
         },
         {
-          id: "2",
+          id: "1",
+          slug: "role-of-iot-integration-smart-enterprises",
           title: "The Role of IoT Integration in Smart Enterprises",
           category: "Technology",
           image: IMAGES.BLOG_1,
@@ -222,6 +224,7 @@ export default function ServiceDetail({ params }) {
       relatedBlogs: [
         {
           id: "3",
+          slug: "modernizing-legacy-systems-roadmap-seamless-transition",
           title:
             "Modernizing Legacy Systems: A Roadmap for Seamless Transition",
           category: "Development",
@@ -229,6 +232,7 @@ export default function ServiceDetail({ params }) {
         },
         {
           id: "1",
+          slug: "building-scalable-react-applications-best-practices",
           title: "Building Scalable React Applications: Best Practices",
           category: "Web Development",
           image: IMAGES.BLOG_1,
@@ -327,12 +331,14 @@ export default function ServiceDetail({ params }) {
       relatedBlogs: [
         {
           id: "1",
+          slug: "building-scalable-react-applications-best-practices",
           title: "Building Scalable React Applications: Best Practices",
           category: "Web Development",
           image: IMAGES.BLOG_1,
         },
         {
           id: "6",
+          slug: "security-best-practices-web-applications",
           title: "Security Best Practices for Web Applications",
           category: "Security",
           image: IMAGES.BLOG_6,
@@ -430,12 +436,14 @@ export default function ServiceDetail({ params }) {
       relatedBlogs: [
         {
           id: "2",
+          slug: "mobile-app-development-native-vs-cross-platform",
           title: "Mobile App Development: Native vs Cross-Platform",
           category: "Mobile Development",
           image: IMAGES.BLOG_2,
         },
         {
           id: "3",
+          slug: "ui-ux-design-principles-better-user-experience",
           title: "UI/UX Design Principles for Better User Experience",
           category: "Design",
           image: IMAGES.BLOG_3,
@@ -533,12 +541,14 @@ export default function ServiceDetail({ params }) {
       relatedBlogs: [
         {
           id: "3",
+          slug: "ui-ux-design-principles-better-user-experience",
           title: "UI/UX Design Principles for Better User Experience",
           category: "Design",
           image: IMAGES.BLOG_3,
         },
         {
           id: "1",
+          slug: "building-scalable-react-applications-best-practices",
           title: "Building Scalable React Applications: Best Practices",
           category: "Web Development",
           image: IMAGES.BLOG_1,
@@ -636,12 +646,14 @@ export default function ServiceDetail({ params }) {
       relatedBlogs: [
         {
           id: "5",
+          slug: "cloud-computing-choosing-right-platform",
           title: "Cloud Computing: Choosing the Right Platform",
           category: "Cloud",
           image: IMAGES.BLOG_5,
         },
         {
           id: "6",
+          slug: "security-best-practices-web-applications",
           title: "Security Best Practices for Web Applications",
           category: "Security",
           image: IMAGES.BLOG_6,
@@ -1161,7 +1173,7 @@ export default function ServiceDetail({ params }) {
               {service.relatedBlogs.map((blog) => (
                 <Link
                   key={blog.id}
-                  href={`/blog/${blog.id}`}
+                  href={`/blog/${blog.slug || blog.id}`}
                   className="card overflow-hidden hover:shadow-lg transition-shadow"
                 >
                   <div className="aspect-video overflow-hidden">

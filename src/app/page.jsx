@@ -80,12 +80,14 @@ export default function HomePage() {
   const blogPosts = [
     {
       id: "1",
+      slug: "role-of-iot-integration-smart-enterprises",
       title: "The Role of IoT Integration in Smart Enterprises",
       category: "Technology",
       image: IMAGES.BLOG_1,
     },
     {
       id: "2",
+      slug: "leveraging-genai-business-innovation-real-world-applications",
       title:
         "Leveraging GenAI for Business Innovation: Real-World Applications",
       category: "Technology",
@@ -93,6 +95,7 @@ export default function HomePage() {
     },
     {
       id: "3",
+      slug: "modernizing-legacy-systems-roadmap-seamless-transition",
       title: "Modernizing Legacy Systems: A Roadmap for Seamless Transition",
       category: "Technology",
       image: IMAGES.BLOG_3,

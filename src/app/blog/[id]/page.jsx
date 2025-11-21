@@ -5,12 +5,13 @@ import { ArrowLeft, Calendar, Clock, User } from "lucide-react";
 import { IMAGES } from "../../../common/constants/images.constant";
 
 export default function BlogDetail({ params }) {
-  const { id } = params;
+  const slug = params?.id || params;
 
   // Hardcoded blog posts data
   const blogPosts = [
     {
       id: 0,
+      slug: "future-of-web-development-trends-2024",
       title: "The Future of Web Development: Trends to Watch in 2024",
       excerpt:
         "Explore the latest trends and technologies that are shaping the future of web development, from AI integration to performance optimization techniques.",
@@ -42,6 +43,7 @@ export default function BlogDetail({ params }) {
     },
     {
       id: 1,
+      slug: "building-scalable-react-applications-best-practices",
       title: "Building Scalable React Applications: Best Practices",
       excerpt:
         "Learn the essential best practices for building scalable React applications that can handle growth and maintain performance.",
@@ -73,6 +75,7 @@ export default function BlogDetail({ params }) {
     },
     {
       id: 2,
+      slug: "mobile-app-development-native-vs-cross-platform",
       title: "Mobile App Development: Native vs Cross-Platform",
       excerpt:
         "Compare native and cross-platform mobile development approaches to choose the best solution for your project.",
@@ -104,6 +107,7 @@ export default function BlogDetail({ params }) {
     },
     {
       id: 3,
+      slug: "ui-ux-design-principles-better-user-experience",
       title: "UI/UX Design Principles for Better User Experience",
       excerpt:
         "Discover the fundamental principles of UI/UX design that can significantly improve your application's user experience.",
@@ -135,6 +139,7 @@ export default function BlogDetail({ params }) {
     },
     {
       id: 4,
+      slug: "optimizing-database-performance-comprehensive-guide",
       title: "Optimizing Database Performance: A Comprehensive Guide",
       excerpt:
         "Learn advanced techniques for optimizing database performance and ensuring your applications run smoothly.",
@@ -166,6 +171,7 @@ export default function BlogDetail({ params }) {
     },
     {
       id: 5,
+      slug: "cloud-computing-choosing-right-platform",
       title: "Cloud Computing: Choosing the Right Platform",
       excerpt:
         "Compare different cloud platforms and learn how to choose the right one for your business needs.",
@@ -197,6 +203,7 @@ export default function BlogDetail({ params }) {
     },
     {
       id: 6,
+      slug: "security-best-practices-web-applications",
       title: "Security Best Practices for Web Applications",
       excerpt:
         "Implement essential security measures to protect your web applications from common vulnerabilities and attacks.",
@@ -226,9 +233,100 @@ export default function BlogDetail({ params }) {
       readTime: "8 min read",
       image: IMAGES.BLOG_6,
     },
+    {
+      id: 7,
+      slug: "role-of-iot-integration-smart-enterprises",
+      title: "The Role of IoT Integration in Smart Enterprises",
+      excerpt:
+        "Discover how IoT integration is transforming smart enterprises and enabling data-driven decision making.",
+      content: `
+        <p>Internet of Things (IoT) integration has become a cornerstone of modern smart enterprises, enabling unprecedented levels of connectivity, automation, and data-driven insights.</p>
+        
+        <h2>1. Enhanced Data Collection</h2>
+        <p>IoT devices provide real-time data collection from various sources throughout the enterprise. This data enables better decision-making and operational efficiency.</p>
+        
+        <h2>2. Automation and Efficiency</h2>
+        <p>IoT integration automates routine processes, reducing manual intervention and improving overall operational efficiency. Smart systems can respond to conditions automatically.</p>
+        
+        <h2>3. Predictive Maintenance</h2>
+        <p>IoT sensors enable predictive maintenance by monitoring equipment health and predicting failures before they occur, reducing downtime and maintenance costs.</p>
+        
+        <h2>4. Improved Customer Experience</h2>
+        <p>IoT enables personalized customer experiences through real-time data collection and analysis, allowing businesses to respond to customer needs more effectively.</p>
+        
+        <p>As enterprises continue to embrace digital transformation, IoT integration will play an increasingly vital role in creating smarter, more efficient operations.</p>
+      `,
+      author: "Tech Expert",
+      date: "January 20, 2024",
+      category: "Technology",
+      readTime: "7 min read",
+      image: IMAGES.BLOG_1,
+    },
+    {
+      id: 8,
+      slug: "leveraging-genai-business-innovation-real-world-applications",
+      title:
+        "Leveraging GenAI for Business Innovation: Real-World Applications",
+      excerpt:
+        "Explore how Generative AI is driving business innovation across various industries and use cases.",
+      content: `
+        <p>Generative AI (GenAI) is revolutionizing how businesses operate, innovate, and serve their customers. From content creation to problem-solving, GenAI offers transformative capabilities.</p>
+        
+        <h2>1. Content Generation and Marketing</h2>
+        <p>GenAI enables businesses to create high-quality content at scale, from marketing copy to social media posts, significantly reducing content creation time and costs.</p>
+        
+        <h2>2. Customer Service Automation</h2>
+        <p>AI-powered chatbots and virtual assistants provide 24/7 customer support, handling routine inquiries and freeing human agents for complex issues.</p>
+        
+        <h2>3. Product Development</h2>
+        <p>GenAI assists in product design, prototyping, and testing by generating ideas, analyzing requirements, and suggesting improvements based on market data.</p>
+        
+        <h2>4. Data Analysis and Insights</h2>
+        <p>GenAI can analyze vast amounts of data to identify patterns, generate insights, and provide recommendations that would be difficult for humans to discover.</p>
+        
+        <p>The applications of GenAI in business are vast and growing. Companies that embrace this technology early will gain significant competitive advantages.</p>
+      `,
+      author: "AI Specialist",
+      date: "January 18, 2024",
+      category: "Technology",
+      readTime: "9 min read",
+      image: IMAGES.BLOG_2,
+    },
+    {
+      id: 9,
+      slug: "modernizing-legacy-systems-roadmap-seamless-transition",
+      title: "Modernizing Legacy Systems: A Roadmap for Seamless Transition",
+      excerpt:
+        "Learn how to modernize legacy systems without disrupting business operations, with a proven roadmap for success.",
+      content: `
+        <p>Modernizing legacy systems is a critical challenge for many organizations. A well-planned approach ensures a smooth transition while maintaining business continuity.</p>
+        
+        <h2>1. Assessment and Planning</h2>
+        <p>Begin with a comprehensive assessment of your current systems. Identify dependencies, risks, and opportunities. Create a detailed modernization roadmap with clear milestones.</p>
+        
+        <h2>2. Incremental Migration</h2>
+        <p>Adopt an incremental approach rather than a big-bang migration. This reduces risk and allows for learning and adjustment along the way.</p>
+        
+        <h2>3. API-First Strategy</h2>
+        <p>Implement an API-first strategy to decouple legacy systems from new applications. This enables gradual modernization while maintaining integration.</p>
+        
+        <h2>4. Training and Change Management</h2>
+        <p>Invest in training and change management to ensure your team is prepared for the new systems. Address concerns and provide adequate support during the transition.</p>
+        
+        <p>Successful legacy system modernization requires careful planning, stakeholder buy-in, and a commitment to continuous improvement throughout the process.</p>
+      `,
+      author: "System Architect",
+      date: "January 16, 2024",
+      category: "Technology",
+      readTime: "8 min read",
+      image: IMAGES.BLOG_3,
+    },
   ];
 
-  const post = blogPosts.find((post) => post.id === parseInt(id));
+  // Find by slug first, fallback to ID for backward compatibility
+  const post = blogPosts.find(
+    (post) => post.slug === slug || post.id === parseInt(slug)
+  );
 
   if (!post) {
     notFound();
@@ -244,7 +342,7 @@ export default function BlogDetail({ params }) {
               {post.category}
             </div>
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-theme-white mb-4 sm:mb-6">
+            <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-theme-white mb-4 sm:mb-6">
               {post.title}
             </h1>
 

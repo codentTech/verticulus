@@ -6,6 +6,7 @@ import Image from "next/image";
 export default function Blog() {
   const featuredPost = {
     id: 0,
+    slug: "future-of-web-development-trends-2024",
     title: "The Future of Web Development: Trends to Watch in 2024",
     excerpt:
       "Explore the latest trends and technologies that are shaping the future of web development, from AI integration to performance optimization techniques.",
@@ -19,6 +20,7 @@ export default function Blog() {
   const posts = [
     {
       id: 1,
+      slug: "building-scalable-react-applications-best-practices",
       title: "Building Scalable React Applications: Best Practices",
       excerpt:
         "Learn the essential best practices for building scalable React applications that can handle growth and maintain performance.",
@@ -30,6 +32,7 @@ export default function Blog() {
     },
     {
       id: 2,
+      slug: "mobile-app-development-native-vs-cross-platform",
       title: "Mobile App Development: Native vs Cross-Platform",
       excerpt:
         "Compare native and cross-platform mobile development approaches to choose the best solution for your project.",
@@ -41,6 +44,7 @@ export default function Blog() {
     },
     {
       id: 3,
+      slug: "ui-ux-design-principles-better-user-experience",
       title: "UI/UX Design Principles for Better User Experience",
       excerpt:
         "Discover the fundamental principles of UI/UX design that can significantly improve your application's user experience.",
@@ -52,6 +56,7 @@ export default function Blog() {
     },
     {
       id: 4,
+      slug: "optimizing-database-performance-comprehensive-guide",
       title: "Optimizing Database Performance: A Comprehensive Guide",
       excerpt:
         "Learn advanced techniques for optimizing database performance and ensuring your applications run smoothly.",
@@ -63,6 +68,7 @@ export default function Blog() {
     },
     {
       id: 5,
+      slug: "cloud-computing-choosing-right-platform",
       title: "Cloud Computing: Choosing the Right Platform",
       excerpt:
         "Compare different cloud platforms and learn how to choose the right one for your business needs.",
@@ -74,6 +80,7 @@ export default function Blog() {
     },
     {
       id: 6,
+      slug: "security-best-practices-web-applications",
       title: "Security Best Practices for Web Applications",
       excerpt:
         "Implement essential security measures to protect your web applications from common vulnerabilities and attacks.",
@@ -148,7 +155,7 @@ export default function Blog() {
                   </div>
                 </div>
                 <Link
-                  href={`/blog/${featuredPost.id}`}
+                  href={`/blog/${featuredPost.slug}`}
                   className="btn-primary w-full sm:w-auto px-4 sm:px-6 py-2 sm:py-3 inline-block text-center"
                 >
                   Read Full Article
@@ -198,7 +205,7 @@ export default function Blog() {
                     <span>{post.date}</span>
                   </div>
                   <Link
-                    href={`/blog/${post.id}`}
+                    href={`/blog/${post.slug}`}
                     className="text-theme-black hover:text-theme-gray-700 font-medium text-xs sm:text-sm inline-flex items-center"
                   >
                     Read More
